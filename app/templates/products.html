@@ -1,0 +1,83 @@
+{% extends "base.html"%}
+{% import"bootstrap/wtf.html" as wtf %}
+
+{% block title %}<title>产品跟踪</title>{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#products').DataTable();
+} );
+</script>
+{% endblock %}
+
+
+{% block page_content %}
+
+
+<div class="row" style="padding: 20px 0;">
+	<div class="row_head_block ">
+		<p>产品跟踪</p>
+	</div>	
+</div>
+<div class="row" style="padding: 5px 0;">
+	<button class="row_head_block" data-toggle="modal" data-target="#Add">增加</button>
+    <button class="row_head_block" data-toggle="modal" data-target="#Edit">修改</button>
+<!-- 模态框（add） -->
+    <div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    增加
+                </div>
+                <div class="modal-body">
+                    {{wtf.quick_form(form_add)}}
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 模态框（add） -->
+    <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    修改
+                </div>
+                <div class="modal-body">
+                    {{wtf.quick_form(form_edit)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+	<table id="products" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>产品编号</th>
+                <th>订单号</th>
+                <th>类型</th>
+                <th>状态</th>
+                <th>位置</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.order_id}}</td>
+                <td>{{product.type}}</td>
+                <td>{{product.status}}</td>
+                <td>{{product.position}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+     
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+.rpo_block{
+	background-color: #dedef8;
+	box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;
+	padding: 10px;
+	text-align: center;
+	margin: 5px;
+}
+.rpo_item{
+	padding: 10px;
+	font-size: 20px;
+	border: 1px;
+}
+.rpo_input_1
+{
+	color: #ff7102;
+}
+.rpo_input_2
+{
+	color: #008f18;
+}
+.rpo_output
+{
+	color: red;
+}
+.row_head_block
+{
+  	min-height: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top,#fff,#f2f2f2);
+    background-image: -o-linear-gradient(top,#fff,#f2f2f2);
+    background-image: linear-gradient(to bottom,#fff,#f2f2f2);
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff2f2f2',GradientType=0);
+    *zoom: 1;
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+   
+}
+.row_head_block p
+{
+    font-size: 18px;
+    line-height: 20px;
+    margin: 8px;
+}

@@ -1,0 +1,77 @@
+{% extends "base.html"%} 
+{% import"bootstrap/wtf.html" as wtf %} 
+{% block title %}
+<title>工作台</title>
+{% endblock %} 
+{% block scripts %}
+<script src="../static/echarts/echarts.common.min.js"></script>
+
+{% endblock %} 
+{% block page_content %}
+
+<div class="row" style="padding: 20px 0;">
+	<div class="row_head_block ">
+		<p>库存状况</p>
+	</div>
+</div>
+<div class="row">
+	<div id="main" style="width: 600px;height:400px;"></div>
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('main'));
+
+		// 指定图表的配置项和数据
+		var option = {
+			tooltip: {
+				trigger: 'item',
+				formatter: "{a} <br/>{b}: {c} ({d}%)"
+			},
+			legend: {
+				orient: 'vertical',
+				x: 'left',
+				data: ['空', '成品', '原料',]
+			},
+			series: [{
+				name: '库存状态',
+				type: 'pie',
+				radius: ['50%', '70%'],
+				avoidLabelOverlap: false,
+				label: {
+					normal: {
+						show: true
+					},
+					emphasis: {
+						show: true,
+						position: 'center',
+						textStyle: {
+							fontSize: '30',
+							fontWeight: 'bold'
+						}
+					}
+				},
+				labelLine: {
+					normal: {
+						show: true
+					}
+				},
+				data: [{
+						value: {{output}},
+						name: '空'
+					},
+					{
+						value: {{input_2}},
+						name: '成品'
+					},
+					{
+						value: {{input_1}},
+						name: '原料'
+					}
+				]
+			}]
+		};
+
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.setOption(option);
+	</script>
+</div>
+{% endblock %}

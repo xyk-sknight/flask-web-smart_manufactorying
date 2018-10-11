@@ -1,0 +1,73 @@
+{% extends "base.html"%}
+{% import"bootstrap/wtf.html" as wtf %}
+
+{% block title %}<title>库存管理</title>{% endblock %}
+{% block scripts %}
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+{% block page_content %}
+
+
+<div class="row" style="padding: 20px 0;">
+	<div class="row_head_block ">
+		<p>库存状态</p>
+	</div>	
+</div>
+<div class="row" style="padding: 5px 0;text-align:center">
+	<button class="row_head_block" data-toggle="modal" data-target="#Input">入库</button>
+	<button class="row_head_block" data-toggle="modal" data-target="#Output">出库</button>
+</div>
+<div>
+	<!-- 模态框（Modal） -->
+			<div class="modal fade" id="Input" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						入库
+						</div>
+						<div class="modal-body">
+						{{wtf.quick_form(form_input)}}
+						</div>
+					</div>
+				</div>
+        	</div>
+	<!-- 模态框（Modal） -->
+			<div class="modal fade" id="Output" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						出库
+						</div>
+						<div class="modal-body">
+						{{wtf.quick_form(form_output)}}
+						</div>
+					</div>
+				</div>
+        	</div>
+</div>
+<div class="row">
+	{% for status in rpo_status_list %}
+	<div class="col-sm-3" style="">
+		<div class="rpo_block">
+			<div>No.{{ loop.index }}</div>
+       		 {% if status == '已出库' %}
+        	<div class="rpo_item rpo_output">无货</div>
+        	{% endif %}
+        	{% if status == '原料' %}
+        	<div class="rpo_item rpo_input_1">原料</div>
+        	{% endif %}
+			 {% if status == '成品' %}
+        	<div class="rpo_item rpo_input_2">成品</div>
+        	{% endif %}
+        			
+        </div>
+	</div>
+    {% endfor %}
+            
+
+
+</div>
+
+
+{% endblock %}
