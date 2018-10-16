@@ -1,0 +1,61 @@
+{% extends "base.html"%} 
+{% import"bootstrap/wtf.html" as wtf %} 
+{% block title %}
+<title>工作台</title>
+{% endblock %} 
+{% block scripts %}
+<script src="../static/echarts/echarts.common.min.js"></script>
+
+{% endblock %} 
+{% block page_content %}
+
+<div class="row" style="padding: 20px 0;">
+	<div class="row_head_block ">
+		<p>工作台</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<div class="row_head_block ">
+			<p>立体仓库</p>
+		</div>
+		<div>
+			设备列表<br>
+			堆垛机器人<br>
+		</div>
+		<div>
+			<button class="btn btn-default btn-block">添加任务</button>
+		</div>
+
+	</div>
+	<div class="col-md-4">
+		<div class="row_head_block ">
+			<p>物流运输</p>
+		</div>
+		<div>
+			设备列表<br>
+			obot运输机器人1<br>
+			传送带<br>
+			obot运输机器人1<br>
+		</div>
+		<div>
+			<button class="btn btn-default btn-block">添加任务</button>
+		</div>
+
+	</div>
+	<div class="col-md-4">
+		<div class="row_head_block ">
+			<p>加工机床</p>
+		</div>
+		<div>
+			设备列表<br>
+			自动夹具<br>
+			加工机床<br>
+		</div>
+		<div>
+			<button class="btn btn-default btn-block">添加任务</button>
+		</div>
+
+	</div>
+</div>
+{% endblock %}
