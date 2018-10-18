@@ -12,22 +12,19 @@ class Rpo_out(Form):
 
 
 class RepositoryForm(Form):
-    row = IntegerField('行?',validators=[DataRequired()])
-    column = IntegerField('列?', validators=[DataRequired()])
+    id = IntegerField('库位号',validators=[DataRequired()])
     status = RadioField(label='操作选择',choices=[('input_1', '入库(原料）'), ('input_2', '入库(成品）'),('output', '出库')],validators=[DataRequired()])
     submit = SubmitField('提交')
 
 
 class RepositoryInputForm(Form):
-    row = IntegerField('行?', validators=[DataRequired()])
-    column = IntegerField('列?', validators=[DataRequired()])
+    id = IntegerField('库位号', validators=[DataRequired()])
     product_id = IntegerField('产品编号',validators=[DataRequired()])
     submit = SubmitField('提交')
 
 
 class RepositoryOutputForm(Form):
-    row = IntegerField('行?', validators=[DataRequired()])
-    column = IntegerField('列?', validators=[DataRequired()])
+    id = IntegerField('库位号', validators=[DataRequired()])
     submit = SubmitField('提交')
 
 
