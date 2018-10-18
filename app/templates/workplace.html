@@ -19,10 +19,23 @@
 		<div class="row_head_block ">
 			<p>立体仓库</p>
 		</div>
-		<div>
-			设备列表<br>
-			堆垛机器人<br>
-		</div>
+        <div class="block_content" style="height:500px">
+		    <table class="table table-hover">
+                <thead>
+                    <th>设备名称</th>
+                    <th>设备状态</th>
+                </thead>
+                <tbody>
+                    {% for item in rpo_ept_list %}
+                    <tr>
+                        <td>{{item.ept_name}}</td>
+                        <td>{{item.status}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
 		<div>
 			<button class="btn btn-default btn-block">添加任务</button>
 		</div>
@@ -32,12 +45,23 @@
 		<div class="row_head_block ">
 			<p>物流运输</p>
 		</div>
-		<div>
-			设备列表<br>
-			obot运输机器人1<br>
-			传送带<br>
-			obot运输机器人1<br>
-		</div>
+		<div class="block_content" style="height:500px">
+		    <table class="table table-hover">
+                <thead>
+                    <th>设备名称</th>
+                    <th>设备状态</th>
+                </thead>
+                <tbody>
+                    {% for item in transfer_ept_list %}
+                    <tr>
+                        <td>{{item.ept_name}}</td>
+                        <td>{{item.status}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
 		<div>
 			<button class="btn btn-default btn-block">添加任务</button>
 		</div>
@@ -47,11 +71,23 @@
 		<div class="row_head_block ">
 			<p>加工机床</p>
 		</div>
-		<div>
-			设备列表<br>
-			自动夹具<br>
-			加工机床<br>
-		</div>
+		<div class="block_content" style="height:500px">
+		    <table class="table table-hover">
+                <thead>
+                    <th>设备名称</th>
+                    <th>设备状态</th>
+                </thead>
+                <tbody>
+                    {% for item in machine_ept_list %}
+                    <tr>
+                        <td>{{item.ept_name}}</td>
+                        <td>{{item.status}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
 		<div>
 			<button class="btn btn-default btn-block">添加任务</button>
 		</div>
