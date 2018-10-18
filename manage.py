@@ -25,7 +25,7 @@ def create():
     #初始仓库建立
     for row in range(1,5):
         for column in range(1,5):
-            rpo = Repository(row=row,column=column,type='已出库')
+            rpo = Repository(row=row,column=column,type='空')
             db.session.add(rpo)
             print(row)
             print(column)

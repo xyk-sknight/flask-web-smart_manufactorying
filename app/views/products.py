@@ -30,7 +30,7 @@ def product_page():
         type = form_add.type.data
         status = form_add.status.data
         position = form_add.position.data
-        if Product.query.filter_by(id=id).all() is not None:
+        if Product.query.filter_by(id=id).first() is not None:
             pass
         else:
             product = Product(id=id,order_id=order_id,type=type,status=status,position=position)
