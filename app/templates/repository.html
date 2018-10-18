@@ -1,7 +1,7 @@
 {% extends "base.html"%}
 {% import"bootstrap/wtf.html" as wtf %}
 
-{% block title %}<title>库存管理</title>{% endblock %}
+{% block title %}<title>立体仓库</title>{% endblock %}
 {% block scripts %}
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -11,63 +11,48 @@
 
 <div class="row" style="padding: 20px 0;">
 	<div class="row_head_block ">
-		<p>库存状态</p>
+		<p>立体仓库</p>
 	</div>	
 </div>
-<div class="row" style="padding: 5px 0;text-align:center">
-	<button class="row_head_block" data-toggle="modal" data-target="#Input">入库</button>
-	<button class="row_head_block" data-toggle="modal" data-target="#Output">出库</button>
-</div>
-<div>
-	<!-- 模态框（Modal） -->
-			<div class="modal fade" id="Input" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-						入库
-						</div>
-						<div class="modal-body">
-						{{wtf.quick_form(form_input)}}
-						</div>
-					</div>
-				</div>
-        	</div>
-	<!-- 模态框（Modal） -->
-			<div class="modal fade" id="Output" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-						出库
-						</div>
-						<div class="modal-body">
-						{{wtf.quick_form(form_output)}}
-						</div>
-					</div>
-				</div>
-        	</div>
-</div>
 <div class="row">
-	{% for status in rpo_status_list %}
-	<div class="col-sm-3" style="">
-		<div class="rpo_block">
-			<div>No.{{ loop.index }}</div>
-       		 {% if status == '已出库' %}
-        	<div class="rpo_item rpo_output">无货</div>
-        	{% endif %}
-        	{% if status == '原料' %}
-        	<div class="rpo_item rpo_input_1">原料</div>
-        	{% endif %}
-			 {% if status == '成品' %}
-        	<div class="rpo_item rpo_input_2">成品</div>
-        	{% endif %}
-        			
+    <div class="col-md-6">
+        <div> 库位状态</div>
+        <table id="rpo_status" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>库位号</th>
+                <th>库存状态</th>
+                <th>产品编号</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>无货</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>原料</td>
+                <td>0001</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md6">
+        <div>
+            设备列表<br>
+            堆垛机器人
         </div>
-	</div>
-    {% endfor %}
-            
+        <div>
+            调度状态
+        </div>
 
-
+    </div>
 </div>
+
+
+
 
 
 {% endblock %}
