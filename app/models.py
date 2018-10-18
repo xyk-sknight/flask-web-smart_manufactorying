@@ -46,7 +46,7 @@ class Product(db.Model):
     def __repr__(self):
         return '<Product %r>' % self.id
 
-class Equpiment(db.Model):
+class Equipment(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     ept_name = db.Column(db.String(64), unique=True, index=True)
     status = db.Column(db.String(64))

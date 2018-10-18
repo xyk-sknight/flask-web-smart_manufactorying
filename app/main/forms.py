@@ -49,8 +49,8 @@ class ProductAddForm(Form):
     submit = SubmitField('提交')
 
 
-class EqupimentAddForm(Form):
-    eqt_name = IntegerField('设备名称', validators=[DataRequired()])
+class EquipmentAddForm(Form):
+    eqt_name = StringField('设备名称', validators=[DataRequired()])
     status = StringField('设备状态?', validators=[DataRequired()])
     position = StringField('设备位置?', validators=[DataRequired()])
     submit = SubmitField('提交')

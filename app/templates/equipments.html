@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% import"bootstrap/wtf.html" as wtf %}
+{% block title %}
+<title>设备管理</title>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+{% block page_content %}
+<button class="row_head_block" data-toggle="modal" data-target="#Add">添加设备</button>
+<!-- 模态框（add） -->
+	<div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    添加设备
+                </div>
+                <div class="modal-body">
+                    {{wtf.quick_form(form_add)}}
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row" style="padding: 20px 0;">
+	<div class="row_head_block ">
+		<p>立体仓库</p>
+	</div>
+</div>
+<div class="row" style="padding: 20px 0;">
+	<div class="row_head_block ">
+		<p>传送物流</p>
+	</div>
+</div>
+<div class="row" style="padding: 20px 0;">
+	<div class="row_head_block ">
+		<p>自动机床</p>
+	</div>
+</div>
+
+{% endblock %}
