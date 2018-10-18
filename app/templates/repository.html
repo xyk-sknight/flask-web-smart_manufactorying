@@ -38,6 +38,34 @@
             </tr>
         </tbody>
         </table>
+        <button class="row_head_block" data-toggle="modal" data-target="#Output">出库</button>
+        <button class="row_head_block" data-toggle="modal" data-target="#Input">入库</button>
+<!-- 模态框（add） -->
+    <div class="modal fade" id="Output" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    增加
+                </div>
+                <div class="modal-body">
+                    {{wtf.quick_form(form_output)}}
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 模态框（add） -->
+    <div class="modal fade" id="Input" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    修改
+                </div>
+                <div class="modal-body">
+                    {{wtf.quick_form(form_input)}}
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <div class="col-md6">
         <div>

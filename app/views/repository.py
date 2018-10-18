@@ -39,7 +39,7 @@ def repository():
         column = form_output.column.data
         product_id = Repository.query.filter_by(row=row,column=column).first().product_id
         # 更新仓库数据
-        Repository.query.filter_by(row=row, column=column).update({'type': '已出库', 'product_id': 0})
+        Repository.query.filter_by(row=row, column=column).update({'type': '已出库', 'product_id': None})
         # 更新产品数据
         Product.query.filter_by(id=product_id).update({'rpo_id': 0, 'status': '已出库', 'position': '工作台'})
         return redirect(url_for('.repository'))
