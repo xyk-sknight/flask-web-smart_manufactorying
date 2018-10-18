@@ -8,6 +8,27 @@ from app.main.forms import EquipmentAddForm
 
 @main.route('/equipments', methods=['GET', 'POST'])
 def equipment():
+    # 返回设备列表
+    rpo_ept_list = []
+    transfer_ept_list = []
+    machine_ept_list = []
+    Equipments = Equipment.query.all()
+    for ept in Equipments:
+        item = {
+             'ept_name':ept.ept_name,
+             'status':ept.status,
+             'position':ept.position
+        }
+        if ept.position == '立体仓库':
+            rpo_ept_list.append(item)
+
+        elif ept.position == '传送物流':
+            transfer_ept_list.append(item)
+
+        elif ept.position == '自动机床':
+            machine_ept_list.append(item)
+
+
     # 插入数据
 
     form_add = EquipmentAddForm()
@@ -23,4 +44,5 @@ def equipment():
 
 
 
-    return render_template('equipments.html',form_add=form_add)
+    return render_template('equipments.html',form_add=form_add,
+                           rpo_ept_list=rpo_ept_list,transfer_ept_list=transfer_ept_list,machine_ept_list=machine_ept_list)

@@ -26,16 +26,52 @@
 	<div class="row_head_block ">
 		<p>立体仓库</p>
 	</div>
+    {% for item in rpo_ept_list %}
+    <div class="col-md-4">
+        <div class="block_content">
+            <div>
+                设备名称：{{item.ept_name}}
+            </div>
+            <div>
+                设备状态：{{item.status}}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 <div class="row" style="padding: 20px 0;">
 	<div class="row_head_block ">
 		<p>传送物流</p>
 	</div>
+    {% for item in transfer_ept_list %}
+    <div class="col-md-4">
+        <div class="block_content">
+            <div>
+                设备名称：{{item.ept_name}}
+            </div>
+            <div>
+                设备状态：{{item.status}}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 <div class="row" style="padding: 20px 0;">
 	<div class="row_head_block ">
 		<p>自动机床</p>
 	</div>
+    {% for item in machine_ept_list %}
+    <div class="col-md-4">
+        <div class="block_content">
+            <div>
+                设备名称：{{item.ept_name}}
+            </div>
+            <div>
+                设备状态：{{item.status}}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
