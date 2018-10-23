@@ -51,3 +51,13 @@ class Equipment(db.Model):
     ept_name = db.Column(db.String(64), unique=True, index=True)
     status = db.Column(db.String(64))
     position = db.Column(db.String(64))
+
+
+class ManufactureTask(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    proc_id = db.Column(db.Integer)
+    state = db.Column(db.String(64))
+    progress = db.Column(db.Integer)
+    start_time = db.Column(db.String(64))
+    complete_time =  db.Column(db.String(64))
+    code =  db.Column(db.Integer)

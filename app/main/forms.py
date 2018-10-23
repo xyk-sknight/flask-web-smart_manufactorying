@@ -52,6 +52,9 @@ class EquipmentAddForm(Form):
     position = StringField('设备位置?', validators=[DataRequired()])
     submit = SubmitField('提交')
 
-
-
-
+class TaskAddForm(Form):
+    proc_id = IntegerField('产品编号?', validators=[DataRequired()])
+    rpo_id = IntegerField('库位号?', validators=[DataRequired()])
+    state = StringField('出库/入库?', validators=[DataRequired()])
+    progress = IntegerField('进度?', validators=[DataRequired()])
+    submit = SubmitField('提交')

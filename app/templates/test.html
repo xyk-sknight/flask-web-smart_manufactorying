@@ -1,43 +1,154 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8"> 
-	<title>Bootstrap 实例 - 模态框（Modal）插件</title>
-	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
 
-<h2>创建模态框（Modal）</h2>
-<!-- 按钮触发模态框 -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	开始演示模态框
-</button>
-<!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-					&times;
-				</button>
-				<h4 class="modal-title" id="myModalLabel">
-					模态框（Modal）标题
-				</h4>
-			</div>
-			<div class="modal-body">
-				在这里添加一些文本
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-				</button>
-				<button type="button" class="btn btn-primary">
-					提交更改
-				</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal -->
+<head>
+    
+    
+<title>工作台</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/mycss.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    
+</head>
+
+<script src="../static/echarts/echarts.common.min.js"></script>
+
+
+
+
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-heade">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toogle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">首页</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/workplace">工作台</a> </li>
+                <li><a href="/repository">立体仓库</a> </li>
+                <li><a href="/products">产品跟踪</a> </li>
+                <li><a href="/equipments">设备管理</a> </li>
+            </ul>
+        </div>
+    </div>
 </div>
-</body>
-</html>
+
+
+<div class="container">
+    
+
+    
+
+<div class="row" style="padding: 20px 0;">
+	<div class="row_head_block ">
+		<p>工作台</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<div class="row_head_block ">
+			<p>立体仓库</p>
+		</div>
+        <div class="block_content" style="height:500px">
+		    <table class="table table-hover">
+                <thead>
+                    <th>设备名称</th>
+                    <th>设备状态</th>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>出入库机器人</td>
+                        <td>正常</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>立体货架</td>
+                        <td>正常</td>
+                    </tr>
+                    
+                </tbody>
+
+            </table>
+        </div>
+		<div>
+			<button class="btn btn-default btn-block">添加任务</button>
+		</div>
+
+	</div>
+	<div class="col-md-4">
+		<div class="row_head_block ">
+			<p>物流运输</p>
+		</div>
+		<div class="block_content" style="height:500px">
+		    <table class="table table-hover">
+                <thead>
+                    <th>设备名称</th>
+                    <th>设备状态</th>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Dobot机器人1</td>
+                        <td>正常</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dobot机器人2</td>
+                        <td>正常</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>传送带</td>
+                        <td>正常</td>
+                    </tr>
+                    
+                </tbody>
+
+            </table>
+        </div>
+		<div>
+			<button class="btn btn-default btn-block">添加任务</button>
+		</div>
+
+	</div>
+	<div class="col-md-4">
+		<div class="row_head_block ">
+			<p>加工机床</p>
+		</div>
+		<div class="block_content" style="height:500px">
+		    <table class="table table-hover">
+                <thead>
+                    <th>设备名称</th>
+                    <th>设备状态</th>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>自动夹具</td>
+                        <td>正常</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>加工机床</td>
+                        <td>正常</td>
+                    </tr>
+                    
+                </tbody>
+
+            </table>
+        </div>
+		<div>
+			<button class="btn btn-default btn-block">添加任务</button>
+		</div>
+
+	</div>
+</div>
+
+</div>
