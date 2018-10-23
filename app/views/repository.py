@@ -4,6 +4,7 @@ from app.models import Repository,Product,Equipment,ManufactureTask
 from app.main import main
 from app.main.forms import RepositoryInputForm,RepositoryOutputForm,TaskAddForm
 import time
+from app.scripts.rpo_scripts import Rpo_output,Rpo_Input
 
 
 #仓库管理
@@ -30,19 +31,9 @@ def repository():
         }
         if ept.position == '立体仓库':
             rpo_ept_list.append(item)
-    #定义入库方法
-    def Rpo_Input(rpo_id,proc_id):
-        product = Product.query.filter_by(id=proc_id).first()
-        # 更新仓库数据
-        Repository.query.filter_by(id=rpo_id).update({'type': product.type, 'product_id': proc_id})
-        # 更新产品数据
-        Product.query.filter_by(id=rpo_id).update({'rpo_id': rpo_id, 'status': '在库', 'position': '仓库'})
-    # 定义出库方法
-    def Rpo_output(rpo_id,proc_id):
-        # 更新仓库数据
-        Repository.query.filter_by(id=rpo_id).update({'type': '空', 'product_id': None})
-        # 更新产品数据
-        Product.query.filter_by(id=proc_id).update({'rpo_id': 0, 'status': '已出库', 'position': '工作台'})
+
+    # 返回任务列表
+
 
     #定义表单
     form_input = RepositoryInputForm()
