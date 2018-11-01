@@ -57,10 +57,10 @@ class ManufactureTask(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     proc_id = db.Column(db.Integer)
     state = db.Column(db.String(64))
-    progress = db.Column(db.Integer) #1-等待中，2-进行中，3-已完成
+    progress = db.Column(db.Integer) # 1-等待中，2-进行中，3-已完成
     start_time = db.Column(db.String(64))
     complete_time =  db.Column(db.String(64))
-    code =  db.Column(db.Integer)
+    code =  db.Column(db.Integer) # 第一位行，第二位列，第三位0-入库，1-出库
 
 class modbuscode(db.Model):
     id = db.Column(db.Integer, primary_key=True)

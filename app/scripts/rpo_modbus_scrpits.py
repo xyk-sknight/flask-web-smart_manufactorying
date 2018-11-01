@@ -42,7 +42,7 @@ def read():
     except modbus_tk.modbus.ModbusError as exc:
         print("%s- Code=%d", exc, exc.get_exception_code())
 
-def write():
+def write(output_value):
     try:
         # Connect to the slave
         master = modbus_rtu.RtuMaster(
@@ -51,8 +51,8 @@ def write():
         master.set_timeout(3.0)
         master.set_verbose(True)
         # 写寄存器起始地址为0的保持寄存器，操作寄存器个数为4
-        master.execute(1, cst.WRITE_MULTIPLE_REGISTERS, 40000, output_value=[2000, 4000, 1])
+        master.execute(1, cst.WRITE_MULTIPLE_REGISTERS, 40000, output_value=output_value)
     except modbus_tk.modbus.ModbusError as exc:
         print("%s- Code=%d", exc, exc.get_exception_code())
 if __name__ == "__main__":
-    write()
+    write([2000,3000,1])

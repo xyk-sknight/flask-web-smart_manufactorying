@@ -15,4 +15,4 @@ def Rpo_output(rpo_id, proc_id):
     # 更新仓库数据
     Repository.query.filter_by(id=rpo_id).update({'type': '空', 'product_id': None})
     # 更新产品数据
-    Product.query.filter_by(id=proc_id).update({'rpo_id': 0, 'status': '已出库', 'position': '工作台'})
+    Product.query.filter_by(id=proc_id).update({'rpo_id': 0, 'status': '已出库', 'position': '???'})

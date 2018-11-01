@@ -5,7 +5,7 @@ from app.main import main
 from app.main.forms import RepositoryInputForm,RepositoryOutputForm,TaskAddForm
 import time
 from app.scripts.rpo_scripts import Rpo_output,Rpo_Input
-
+from app.scripts.rpo_modbus_scrpits import write
 
 #仓库管理
 @main.route('/repository', methods=['GET', 'POST'])
@@ -65,9 +65,11 @@ def repository():
         if state == '出库':
             code = 100*row+10*column+0
             Rpo_output(rpo_id,proc_id)
-        else:
+            write([row,column,0])
+        elif state == '入库':
             code = 100*row+10*column+1
             Rpo_Input(rpo_id, proc_id)
+            write([row, column, 1])
 
 
         localtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
