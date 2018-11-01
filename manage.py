@@ -29,9 +29,6 @@ def create():
             db.session.add(rpo)
             print(row)
             print(column)
-    for i in range(20):
-        product = Product(order_id=1002,type='成品',status='成品',position='已出库')
-        db.session.add(product)
 
 
 

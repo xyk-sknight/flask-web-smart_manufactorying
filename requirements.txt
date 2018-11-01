@@ -15,3 +15,5 @@ Werkzeug
 alembic
 blinker
 itsdangerous
+serial
+modbus_tk
