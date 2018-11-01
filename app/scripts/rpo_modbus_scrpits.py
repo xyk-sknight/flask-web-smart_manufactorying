@@ -3,8 +3,7 @@ import time
 import modbus_tk
 import modbus_tk.defines as cst
 from modbus_tk import modbus_rtu
-
-# PORT = 1
+#主机端口
 PORT = "COM1"
 
 
